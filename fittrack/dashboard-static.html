@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <h2 class="logo">✚ FIT<span>TRACK.</span></h2>
+
+            <nav>
+                <a class="active" href="#dashboard">▦ Dashboard</a>
+                <a href="#goals">♡ Goals</a>
+                <a href="#meals">♜ Meal Tracker</a>
+                <a href="#progress">♧ Progress</a>
+                <a href="#reminders">♧ Reminders</a>
+            </nav>
+
+            <div class="profile">
+                <div class="avatar">H</div>
+                <div>Harmann Kaur<small>Edit Profile</small></div>
+            </div>
+        </aside>
+
+        <main class="main" id="dashboard">
+            <header class="topbar">
+                <input type="search" placeholder="⌕ Search anything...">
+                <span>🔔</span>
+                <span id="date"></span>
+            </header>
+
+            <section class="welcome">
+                <div>
+                    <h1>Hi, Harmann! 👋</h1>
+                    <p>Small steps make big changes.</p>
+                </div>
+                <p class="quote">Discipline today builds the results of tomorrow.</p>
+            </section>
+
+            <section class="stats">
+                <article class="card">
+                    <label>Current Weight</label>
+                    <h2>54 <small>kg</small></h2>
+                    <p class="green">↓ 1.2 kg this week</p>
+                </article>
+                <article class="card">
+                    <label>Height</label>
+                    <h2>160 <small>cm</small></h2>
+                    <p>Personal profile</p>
+                </article>
+                <article class="card">
+                    <label>Day of Plan</label>
+                    <h2 class="purple">1</h2>
+                    <p class="green">Keep going!</p>
+                </article>
+            </section>
+
+            <section class="trackers">
+                <article class="card" id="water">
+                    <h3>💧 Water Intake</h3>
+                    <p>Daily target: 3000 ml</p>
+                    <h2 id="waterValue">0 <small>/ 3000 ml</small></h2>
+                    <div class="progress"><div id="waterBar"></div></div>
+                    <p id="waterPercent">0% completed</p>
+                    <button onclick="addWater(250)">+ 250 ml</button>
+                    <button onclick="addWater(500)">+ 500 ml</button>
+                </article>
+
+                <article class="card" id="meals">
+                    <h3>🍴 Meal Intake</h3>
+                    <p>Daily calorie target: 2500 kcal</p>
+                    <h2 class="purple" id="calorieValue">1731 <small>kcal</small></h2>
+                    <div class="progress purpleBar"><div id="calorieBar"></div></div>
+                    <p id="caloriePercent">69% of target</p>
+                    <button onclick="addMeal()">+ Log Meal</button>
+                </article>
+            </section>
+
+            <section class="lower">
+                <article class="card" id="progress">
+                    <h3>Weight Trend</h3>
+                    <p>Your recent check-ins</p>
+                    <div class="chart">
+                        <div style="height:45%"></div>
+                        <div style="height:75%"></div>
+                        <div style="height:60%"></div>
+                        <div style="height:68%"></div>
+                    </div>
+                    <div class="chartLabels">
+                        <span>19 Oct</span><span>20 Oct</span>
+                        <span>21 Oct</span><span>22 Oct</span>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Activity Split</h3>
+                    <p>Time spent this week</p>
+                    <div class="activity"><span>Cardio</span><b>2 days</b><div><i style="width:75%"></i></div></div>
+                    <div class="activity"><span>Strength</span><b>2 days</b><div><i style="width:55%"></i></div></div>
+                    <div class="activity"><span>Yoga</span><b>1 day</b><div><i style="width:35%"></i></div></div>
+                    <div class="activity"><span>Other</span><b>1 day</b><div><i style="width:20%"></i></div></div>
+                </article>
+            </section>
+
+            <section class="card" id="reminders">
+                <h3>Upcoming Reminders</h3>
+                <div class="addReminder">
+                    <input id="reminderInput" placeholder="Add a reminder...">
+                    <button onclick="addReminder()">+ Add</button>
+                </div>
+                <div id="reminderList"></div>
+            </section>
+
+            <footer>FITTRACK · Keep moving, keep growing.</footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
